@@ -1,0 +1,84 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    cursor: url('./images/pointer.png'), auto;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    background: #111;
+}
+
+/* Button Container */
+#buttonContainer {
+    display: none; /* hidden initially */
+    position: absolute;
+    top: calc(50% + 150px);
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* No button free movement */
+#noButton {
+    position: absolute;
+}
+
+/* Buttons Style */
+#yesButton, #noButton {
+    background-color: #d00c92;
+    border: 2px solid #f381de;
+    color: #fff;
+    cursor: pointer;
+    height: 50px;
+    padding: 0 30px;
+    font-size: 16px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+#yesButton:hover, #noButton:hover {
+    transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    background: #000;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.modal video {
+    width: 500px;
+    max-width: 90vw;
+    border-radius: 10px;
+}
+
+#closeModal {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
