@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://raw.githubusercontent.com/sojijr/valentine-website/main/public/images/favicon.png">
+    <link rel="icon" href="public/images/favicon.png" type="image/x-icon" />  
+    <title>for my kajukatli!</title>
+    <link rel="stylesheet" href="public/style.css">
+  </head>
+  <body>
+    <canvas id="starfield"></canvas>
+    <div id="buttonContainer">
+      <button id="yesButton">Yes ❤</button>
+      <button id="noButton">No</button>
+    </div>
+
+    <!-- Video Popup -->
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal">&times;</span>
+    <video id="loveVideo" controls>
+      <source src="video/WhatsApp Video 2026-02-13 at 23.47.31.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+    <audio id="backgroundMusic" loop muted>
+      <source src="song/Twin_Strings_-_Dhalti_Rahe_(mp3.pm).mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <script src="script.js"></script>
+    <script>
+      // Enable audio autoplay after user interaction
+      const audio = document.getElementById('backgroundMusic');
+      
+      // Try to play immediately (might work on some sites)
+      audio.play().catch(() => {
+        console.log('Autoplay blocked - will play on first user interaction');
+      });
+      
+      // Play on first user interaction
+      document.addEventListener('click', () => {
+        audio.muted = false;
+        audio.play();
+      }, { once: true });
+      
+      document.addEventListener('touchstart', () => {
+        audio.muted = false;
+        audio.play();
+      }, { once: true });
+    </script>
+  </body>
+</html>
